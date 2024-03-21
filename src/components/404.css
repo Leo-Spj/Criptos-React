@@ -1,0 +1,38 @@
+.no-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.no-404 h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.no-404 span {
+    font-size: 18px;
+    color: #666;
+}
+
+.no-404 a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    margin-top: 16px;
+    background-color: #f8f8f8;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.no-404 a:hover {
+    background-color: #333;
+    color: #f8f8f8;
+}
