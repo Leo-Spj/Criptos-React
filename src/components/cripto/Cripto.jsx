@@ -1,5 +1,6 @@
 import './Cripto.css';
 
+// 'ffc' snippet
 function Cripto({name, priceUsd, symbol, changePercent24Hr}) {
     return ( 
         <div className='cripto'>
