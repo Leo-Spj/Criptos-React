@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './App.css';
 
 function App() {
 
@@ -7,9 +9,11 @@ function App() {
   const API_URL = import.meta.env.VITE_API_URL;
   
   useEffect(() => {
-    fetch(`${API_URL}assets`)
-      .then(response => response.json())
-      .then(data => setCriptos(data.data))
+    axios.get(`${API_URL}assets`)
+      .then(data => 
+        //console.log(data)
+        setCriptos(data.data.data)
+        )
       .catch(error => console.log(error))
   }, []);
 
