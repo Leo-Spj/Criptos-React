@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div className='app-container'>
+
       <h1>Lista de criptomonedas</h1>
 
       <div className='cripto-container'>
