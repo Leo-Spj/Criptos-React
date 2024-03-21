@@ -1,9 +1,10 @@
 import './CriptoPage.css';
+import usePetition from '../hooks/usePetition';
 
 import { useParams } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { format } from 'date-fns';
 
 
 
@@ -11,25 +12,8 @@ function CriptoPage() {
 
     const param = useParams()
 
-    const API_URL = import.meta.env.VITE_API_URL;
-
-    const [cryptoData, setCryptoData] = useState(null);
-    const [history, setHistory] = useState([]);
-    
-    useEffect(() => {
-        axios.get(`${API_URL}assets/${param.id}`)
-            .then(data => {
-            setCryptoData(data.data.data);
-            })
-            .catch(error => console.error(error))
-
-        axios.get(`${API_URL}assets/${param.id}/history?interval=d1`)
-            .then(data => {
-            console.log(data);
-            setHistory(data.data.data);
-            })
-            .catch(error => console.error(error))
-    }, []);
+    const cryptoData = usePetition(`assets/${param.id}`);
+    const history = usePetition(`assets/${param.id}/history?interval=d1`);
 
 
 
@@ -40,29 +24,69 @@ function CriptoPage() {
     }
 
 
-    return (
-        <div className='app-container'>
-            <h1>{cryptoData && cryptoData.name}</h1>
-            <div className='info'>
-                <ul>
-                    {cryptoData && Object.entries(cryptoData).map(([key, value]) => (
-                        <li key={key}><span className='label'>{key}</span>: {value}</li>
-                    ))}
-                </ul>
-            </div>
+    const width = Math.max(window.innerWidth * 0.9, 300);
 
-            <div className='history'>
-                <h2>Historial</h2>
-                <BarChart width={Math.max(Math.min(window.innerWidth, 1280), 250)} height={200} data={history}>
-                    <CartesianGrid strokeDasharray='5 5' />
-                    <XAxis dataKey='date' />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey='priceUsd' fill='#8884d8' />
-                </BarChart>
-            </div>
+    return (
+    <>
+
+        <div className='cripto-page-container'>
+
+            {
+                (cryptoData) && (
+                    <div className='info'>
+
+                        <div className='main-info'>
+                            <span>Ranking: {cryptoData.rank}</span>
+                            <h1>{cryptoData.name}</h1>
+                            <span className='symbol'>{cryptoData.symbol}</span>
+                        </div>
+
+                        <div className='details'>
+                            <ul>
+                                {cryptoData && Object.entries(cryptoData).map(([key, value]) => {
+                                    if (key !== 'id' && key !== 'rank' && key !== 'symbol' && key !== 'name') {
+                                        return (
+                                            <li key={key}>
+                                                <span className='label'>{key}: </span>
+                                                <span>{value}</span>
+                                            </li>
+                                        );
+                                    }
+                                    <li key={key}></li>
+                                })}
+                            </ul>
+                        </div>
+                    </div>
+                )
+            }
+        
+            
+
+            {
+                (history) && (
+                    <div className=''>
+                        <h2>{`Historia`}</h2>
+                        <BarChart width={width} height={200} data={history}>
+                            <CartesianGrid strokeDasharray='5 5' />
+                            <XAxis 
+                                dataKey='date' 
+                                tickFormatter={(str) => {
+                                const date = new Date(str);
+                                return format(date, 'dd/MM');
+                                }}
+                            />
+                            <YAxis />
+                            <Tooltip/>
+                            <Legend />
+                            <Bar dataKey='priceUsd' name='Precio (USD)' fill='#8884d8'/>
+                        </BarChart>
+                    </div>
+                )
+                
+            }
+
         </div>
+    </>
     );
 }
 
