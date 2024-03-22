@@ -34,7 +34,7 @@ function Cuadricula() {
       <div className='cripto-container'>
         {
           criptos.map( cripto =>(
-            <Cripto 
+            <Cripto
               key={cripto.id}
               id={cripto.id}
               name={cripto.name} 
