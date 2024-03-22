@@ -31,7 +31,16 @@ body {
   background: rgb(0,15,22);
   background: linear-gradient(180deg, #171837 0%, #181F38 60.42%, #182438 100%);
   min-height: 98vh;
+  padding: 0.5rem;
 }
+@media (min-width: 1200px) {
+  body {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+
 
 h1 {
   margin-bottom: 2rem;
