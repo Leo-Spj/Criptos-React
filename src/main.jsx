@@ -20,11 +20,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path="*" element={<Pagina404 />} />
 
-      <Route path="criptos-react/" element={<App />}>
+      <Route path="/" element={<App />}>
           <Route index element={<Home />} />
       </Route>  
 
-      <Route path="criptos-react/criptomonedas" element={<App />}>
+      <Route path="/criptomonedas" element={<App />}>
           <Route index element={<Cuadricula />} />
           <Route path=":id" element={<CriptoPage/>} />
       </Route>  
