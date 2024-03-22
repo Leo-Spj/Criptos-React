@@ -5,6 +5,14 @@
 Este proyecto es una aplicación web SPA en React que utiliza la API proporcionada por Coincap para obtener datos de criptomonedas.
 
 
+## Imagenes
+
+| Screen | Shots |
+|--------------|--------------|
+| ![Bienvenida](./screenshots/bienvenida.png) | ![Monedas](./screenshots/monedas.png) |
+| ![Detalles](./screenshots/detalle-cripto.png) | ![404](./screenshots/404.png) |
+
+
 ## Hooks utilizados
 
 En este proyecto se utilizan los siguientes hooks de React:
@@ -20,20 +28,13 @@ Requisito tener Node.js y npm instalados
 1. Clona el repositorio.
 2. Navega hasta el directorio del proyecto.
 3. Ejecuta `npm install` para instalar las dependencias.
-4. Ejecuta `npm start` para iniciar el servidor de desarrollo.
+4. Ejecuta `npm run dev` para iniciar el servidor de desarrollo.
 
 
 ## Dependencias
 
 Este proyecto utiliza las siguientes dependencias adicionales:
 
-
 - `axios`: Un cliente HTTP basado en promesas para el navegador y node.js. (Reemplazo a fetch)
 - `recharts`: Una biblioteca de gráficos para React basada en D3.
 
-## Imagenes
-
-| Screen | Shots |
-|--------------|--------------|
-| ![Bienvenida](./screenshots/bienvenida.png) | ![Monedas](./screenshots/monedas.png) |
-| ![Detalles](./screenshots/detalle-cripto.png) | ![404](./screenshots/404.png) |
