@@ -8,7 +8,7 @@ import Home from './Home.jsx'
 import Cuadricula from './components/Cuadricula.jsx'
 import Pagina404 from './components/404.jsx'
 
-import { BrowserRouter as Router } from 'react-router-dom' // 'imbr' snippet
+import { HashRouter as Router } from 'react-router-dom' // 'imbr' snippet
 import { Routes, Route } from 'react-router-dom' // 'imrr' snippet
 import CriptoPage from './components/cripto/CriptoPage.jsx'
 
