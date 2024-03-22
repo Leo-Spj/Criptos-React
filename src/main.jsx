@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path="*" element={<Pagina404 />} />
 
-      <Route path="/criptos-react/" element={<App />}>
+      <Route path="/" element={<App />}>
           <Route index element={<Home />} />
       </Route>  
 
