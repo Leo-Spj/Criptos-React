@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 // 'ffc' snippet
 function Cripto({id, name, priceUsd, symbol, changePercent24Hr}) {
     return ( 
-        <Link to={`/criptomonedas/${id}`} className='link-cripto'>
+        <Link to={`/criptos-react/criptomonedas/${id}`} className='link-cripto'>
             <div className='cripto'>
                 <h2>{name}</h2>
                 <div className="info">

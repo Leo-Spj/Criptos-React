@@ -7,9 +7,9 @@ function Menu() {
         <nav className="main-menu">
             <ul>
                     {/* 'rnl' snippet */}
-                <li><NavLink to="/">Inicio</NavLink></li>
-                <li><NavLink to="/criptomonedas">Criptomonedas</NavLink></li>
-                <li><NavLink to="/nosotros">Nosotros</NavLink></li>
+                <li><NavLink to="/criptos-react/">Inicio</NavLink></li>
+                <li><NavLink to="/criptos-react/criptomonedas">Criptomonedas</NavLink></li>
+                <li><NavLink to="/criptos-react/nosotros">Nosotros</NavLink></li>
             </ul>
         </nav>
      );

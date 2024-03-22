@@ -7,7 +7,7 @@ function Pagina404() {
             <h1>Página no encontrada</h1>
             <span>La página solicitada, no existe</span>
             <span>
-                <NavLink to="/">Volver</NavLink>
+                <NavLink to="/criptos-react/">Volver</NavLink>
             </span>
         </div>
      );
