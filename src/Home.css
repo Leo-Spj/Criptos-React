@@ -1,5 +1,9 @@
 .home-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
 }
 
 .home-container .title {
