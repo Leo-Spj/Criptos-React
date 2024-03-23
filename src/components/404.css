@@ -5,6 +5,12 @@
     justify-content: center;
     height: 100vh;
     background-color: #f8f8f8;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .no-404 h1 {
